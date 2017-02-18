@@ -1,0 +1,19 @@
+body{
+	background: orange;
+}
+.thumb{
+	
+	margin:1em;
+}
+.rate{
+	background: grey;
+	color: white;
+	float:right;
+	border-radius: 2px;
+}
+.listitem{
+	border: 2em solid transparent;
+}
+.listitem:hover{
+	background: rgba(100,200,100,0.3)
+}

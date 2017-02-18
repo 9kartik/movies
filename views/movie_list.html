@@ -1,0 +1,31 @@
+	<div>
+	<span><input type="text" ng-model="mov_name" placeholder="Type something" list="names" class="form-control">
+	  <datalist id="names">
+	    <option value="{{mov.movie_title}}" ng-repeat="mov in movz">
+	  </datalist>
+	</div></span>
+	<span><button>Search</button></span>
+	{{$index}}{{bigCurrentPage}}{{(maxSize-1)}}
+	<div ng-repeat="mov in movz|filter:mov_name" ng-if="$index>=bigCurrentPage*(maxSize-1) && $index<bigCurrentPage*maxSize" class="well thumb col-md-3 col-sm-12 ">
+		<div class="row">
+			<a href="{{mov.movie_imdb_link}}" target="_blank"><h1>{{mov.movie_title}}{{mov.title_year?'('+mov.title_year+')':''}}</h1></a>
+			<div class="text-right">{{mov.country}}</div>
+
+			{{mov.actor_1_name}}
+			{{mov.actor_2_name}}
+			
+			{{mov.budget}}
+			<div class="rate">{{mov.content_rating}}</div>
+			{{mov.director_name}}
+			{{mov.language}}
+			<div class="row">
+				<div ng-repeat="gn in mov.genres.split('|')" class="col-md-2">{{gn}}</div>
+			</div>
+			<div class="row"  ng-hidden="true">
+				<div ng-repeat="gn in mov.plot_keywords.split('|')" class="col-md-2">{{gn}}
+				</div>
+			</div>
+		</div>
+	</div>
+<ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></ul>
+<pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>

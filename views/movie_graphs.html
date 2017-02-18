@@ -1,0 +1,19 @@
+	<div >
+	<span><input type="text" ng-model="mov_name" placeholder="Type something" list="names" class="form-control">
+	  <datalist id="names">
+	    <option value="{{mov.movie_title}}" ng-repeat="mov in movz">
+	  </datalist>
+	</span>
+	<span><button>Sort By Budget</button></span>
+	<div ng-repeat="mov in movz|filter:mov_name" class="col-md-12 col-sm-12 ">
+		<div class="row">
+			<div class="col-md-2">{{mov.movie_title}}</div>
+			<div class="col-md-10">
+				<uib-progressbar max="250000000" value="mov.budget"><span style="color:white; white-space:nowrap;">${{mov.budget}}</span></uib-progressbar>	
+			</div>
+		</div>
+	</div>
+	</div>
+<!-- <ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" num-pages="numPages"></ul>
+
+<pre>Page: {{bigCurrentPage}} / {{numPages}}</pre> -->

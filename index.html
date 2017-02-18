@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Movers</title>
+	<link rel="stylesheet" href="styles/font-awesome.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+<div ui-view>
+	<div class="text-center">
+		<h1>Movie Database</h1>
+	</div>
+    <a ui-sref="home.list" class="listitem col-md-6 col-sm-12 text-center"><h2>Movie List</h2></a>
+    <a ui-sref="home.graphs" class="listitem col-md-6 col-sm-12 text-center" ><h2>Budget Comparisions</h2></a>
+    </div>
+</body>
+	<script src="list.json"></script>
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+	<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+	<script src="node_modules/zangodb/dist/zangodb.min.js"></script>
+	<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/js/bootstrap.min.js">
+	<script src="app.js"></script>
+	<script src="controller.js"></script>
+</html>
